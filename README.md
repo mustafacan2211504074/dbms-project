@@ -59,3 +59,51 @@ The database system includes the following primary entities:
 ---
 
 ## Project Structure
+
+FlavorFleet
+│
+├── docs
+├── database
+│ ├── schema
+│ ├── triggers
+│ ├── procedures
+│
+├── diagrams
+└── sample-data
+
+
+---
+
+## Team Responsibilities
+
+| Member | Responsibility |
+|------|------|
+| Member 1 | User Management & Authentication |
+| Member 2 | Restaurant & Catalog System |
+| Member 3 | Product & Inventory Management |
+| Member 4 | Order Engine & Transactions |
+| Member 5 | Reviews, Coupons & Payments |
+
+---
+
+## Purpose of This Repository
+
+This repository is used for:
+
+- Collaborative database design
+- Version control of SQL scripts
+- Tracking schema development
+- Maintaining documentation
+
+---
+
+## Final Submission
+
+The **main branch contains the final version of the database project** including:
+
+- Database schema
+- SQL scripts
+- ER diagrams
+- Documentation
+
+---
