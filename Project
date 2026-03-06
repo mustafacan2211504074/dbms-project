@@ -1,0 +1,29 @@
+CREATE TABLE Restaurants (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    address VARCHAR(255) NOT NULL,
+    rating DECIMAL(2,1) DEFAULT 0,
+    owner_id INT NOT NULL,
+    is_active BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY (owner_id) REFERENCES Users(id)
+);
+CREATE TABLE Categories (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    restaurant_id INT NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    description VARCHAR(255),
+
+    FOREIGN KEY (restaurant_id) REFERENCES Restaurants(id)
+);
+CREATE TABLE OpeningHours (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    restaurant_id INT NOT NULL,
+    day_of_week VARCHAR(10) NOT NULL,
+    open_time TIME,
+    close_time TIME,
+    is_closed BOOLEAN DEFAULT FALSE,
+
+    FOREIGN KEY (restaurant_id) REFERENCES Restaurants(id)
+);
