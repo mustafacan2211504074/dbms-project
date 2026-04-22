@@ -1,51 +1,55 @@
 # Order Engine & Transaction Module
 
-This module handles the core transactional logic of the FlavorFleet system.
+### The Flower Hub Database Project
+
+This module manages order processing and transactions.
 
 ---
 
 ## Responsibilities
 
-- Order creation
-- Cart checkout process
-- Order status tracking
-- Order history storage
+* Order creation
+* Checkout flow
+* Transaction logic
+* Order tracking
 
 ---
 
-## Core Tables
+## Tables Implemented
 
-Orders
+### Orders
 
-Stores order information.
+Attributes:
 
-Attributes include:
-
-- id
-- customer_id
-- restaurant_id
-- courier_id
-- total_price
-- status
-- order_date
+* order_id
+* customer_id
+* shop_id
+* courier_id
+* total_price
+* status
+* order_date
 
 ---
 
-OrderDetails
+### OrderDetails
 
-Bridge table connecting Orders and Products.
+Bridge table between Orders and Products.
 
-This table resolves the **Many-to-Many relationship** between:
+Attributes:
 
-Orders ↔ Products
-
----
-
-## Database Relationships
-
-Customer → One-to-Many → Orders  
-Orders → Many-to-Many → Products
+* order_detail_id
+* order_id
+* product_id
+* quantity
+* unit_price
 
 ---
 
-This module acts as the **transaction engine of the platform**.
+## Relationships
+
+Users (1) → (N) Orders
+Orders (N) ↔ (N) Products
+
+---
+
+This module handles core order processing.
