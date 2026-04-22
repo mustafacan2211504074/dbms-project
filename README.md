@@ -1,64 +1,63 @@
 # User Management & Authentication Module
 
-This module is responsible for designing and implementing the **user management system** of the FlavorFleet platform.
+### The Flower Hub Database Project
+
+This module is responsible for managing users and authentication for The Flower Hub system.
 
 ---
 
 ## Responsibilities
 
-- User account management
-- Role-based access control (RBAC)
-- Authentication data storage
-- Managing multiple user addresses
+* User registration
+* Role-based access control (RBAC)
+* Authentication data storage
+* Multiple user addresses
 
 ---
 
-## Core Tables
+## Tables Implemented
 
-Users
+### Roles
 
-Stores all system users including customers, couriers, and administrators.
+Stores system roles:
 
-Attributes include:
-
-- id
-- email
-- password_hash
-- full_name
-- phone
-- role_id
+* Admin
+* Customer
+* Courier
+* Vendor
 
 ---
 
-Roles
+### Users
 
-Defines system roles and access levels.
+Stores all system users.
 
-Example roles:
+Attributes:
 
-- Admin
-- Customer
-- Courier
+* user_id
+* email
+* password_hash
+* full_name
+* phone
+* role_id
 
 ---
 
-UserAddresses
+### UserAddresses
 
-Allows users to store multiple delivery addresses.
+Stores multiple delivery addresses per user.
 
 Relationship:
 
-User → One-to-Many → UserAddresses
+Users (1) → (N) UserAddresses
 
 ---
 
-## Database Concepts Used
+## Relationships
 
-- One-to-Many relationships
-- Foreign key constraints
-- Data validation
-- Secure credential storage
+Roles (1) → (N) Users
+Users (1) → (N) UserAddresses
 
 ---
 
-This module acts as the **entry point of the system**, ensuring secure user identification and role management.
+This module provides secure authentication and role management for The Flower Hub system.
