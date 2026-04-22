@@ -1,0 +1,32 @@
+CREATE TABLE Shops (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    address VARCHAR(255),
+    rating DECIMAL(2,1) CHECK (rating BETWEEN 0 AND 5),
+    owner_id INT,
+    is_active BOOLEAN DEFAULT TRUE,
+    
+    FOREIGN KEY (owner_id) REFERENCES Users(id)
+);
+CREATE TABLE Categories (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    parent_id INT,
+    
+    FOREIGN KEY (parent_id) REFERENCES Categories(id)
+);
+CREATE TABLE OpeningHours (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    shop_id INT,
+    day_of_week VARCHAR(10),
+    open_time TIME,
+    close_time TIME,
+    
+    FOREIGN KEY (shop_id) REFERENCES Shops(id)
+); 
+INSERT INTO Shops (name, address, rating, owner_id)
+VALUES ('Rose Garden', 'Istanbul, Turkey', 4.5, 1);
+INSERT INTO Categories (name, parent_id)
+VALUES ('Roses', 1);
+INSERT INTO OpeningHours (shop_id, day_of_week, open_time, close_time)
+VALUES (1, 'Monday', '09:00', '18:00');
