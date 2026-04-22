@@ -1,109 +1,57 @@
-# FlavorFleet – Multi-Vendor Food Delivery Database System
+# Product & Inventory Module
 
-## Project Overview
-FlavorFleet is a multi-vendor food delivery management system designed to handle complex relational data between customers, restaurants, couriers, and administrators.
+### The Flower Hub Database Project
 
-The goal of this project is to design and implement a normalized relational database system that ensures:
-
-- Data consistency
-- Transaction integrity
-- Scalable structure
-- Efficient query performance
-
-This project focuses on implementing a **3NF normalized database schema** capable of supporting high-volume transactional operations.
+This module manages products and inventory tracking.
 
 ---
 
-## System Roles
+## Responsibilities
 
-The system supports multiple user roles:
-
-- **Customer** – Browses restaurants, places orders, tracks deliveries
-- **Restaurant Owner** – Manages menu items and inventory
-- **Courier** – Handles delivery assignments
-- **Administrator** – Oversees system operations and user roles
+* Product management
+* Price handling
+* Stock tracking
+* Inventory logging
 
 ---
 
-## Core Database Concepts Used
+## Tables Implemented
 
-This project demonstrates several key database design principles:
+### Products
 
-- Relational Database Modeling
-- Third Normal Form (3NF)
-- One-to-Many Relationships
-- Many-to-Many Relationships
-- SQL Triggers
-- Stored Procedures
-- Complex Joins and Views
-- Transaction Management
+Attributes:
 
----
-
-## Main Entities
-
-The database system includes the following primary entities:
-
-- Users
-- Roles
-- Restaurants
-- Categories
-- Products
-- Orders
-- OrderDetails
-- Reviews
-- Coupons
-- Payments
-- InventoryLogs
+* product_id
+* shop_id
+* category_id
+* name
+* price
+* stock_quantity
+* description
 
 ---
 
-## Project Structure
+### ProductExtras
 
-FlavorFleet
-│
-├── docs
-├── database
-│ ├── schema
-│ ├── triggers
-│ ├── procedures
-│
-├── diagrams
-└── sample-data
+Optional add-ons:
 
+* Gift notes
+* Extra wrapping
+* Custom messages
 
 ---
 
-## Team Responsibilities
+### InventoryLogs
 
-| Member | Responsibility |
-|------|------|
-| Member 1 | User Management & Authentication |
-| Member 2 | Restaurant & Catalog System |
-| Member 3 | Product & Inventory Management |
-| Member 4 | Order Engine & Transactions |
-| Member 5 | Reviews, Coupons & Payments |
+Tracks stock movements.
 
 ---
 
-## Purpose of This Repository
+## Relationships
 
-This repository is used for:
-
-- Collaborative database design
-- Version control of SQL scripts
-- Tracking schema development
-- Maintaining documentation
+Shops (1) → (N) Products
+Products (1) → (N) InventoryLogs
 
 ---
 
-## Final Submission
-
-The **main branch contains the final version of the database project** including:
-
-- Database schema
-- SQL scripts
-- ER diagrams
-- Documentation
-
----
+This module handles product and inventory logic.
