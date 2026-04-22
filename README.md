@@ -1,62 +1,59 @@
-# Restaurant & Catalog Management Module
+# Shop & Catalog Management Module
 
-This module manages restaurant onboarding and menu categorization within the FlavorFleet system.
+### The Flower Hub Database Project
+
+This module manages vendor shops and catalog structure for The Flower Hub system.
 
 ---
 
 ## Responsibilities
 
-- Restaurant profile management
-- Food category organization
-- Restaurant availability tracking
-- Operating hours management
+* Shop onboarding
+* Shop profile management
+* Category hierarchy
+* Opening hours management
 
 ---
 
-## Core Tables
+## Tables Implemented
 
-Restaurants
+### Shops
 
-Stores all restaurants registered in the system.
+Stores vendor shop information.
 
-Attributes include:
+Attributes:
 
-- id
-- name
-- address
-- rating
-- owner_id
-- is_active
-
----
-
-Categories
-
-Defines food categories such as:
-
-- Pizza
-- Burgers
-- Desserts
-- Drinks
+* shop_id
+* name
+* address
+* rating
+* owner_id
+* is_active
 
 ---
 
-OpeningHours
+### Categories
 
-Stores restaurant operating schedules.
+Defines product categories:
 
-Example:
+* Flowers
+* Bouquets
+* Gifts
+* Special Occasions
 
-- Monday – 09:00 to 22:00
-- Tuesday – 09:00 to 22:00
+---
+
+### OpeningHours
+
+Stores shop operating hours.
 
 ---
 
 ## Relationships
 
-Restaurant → One-to-Many → Products  
-Restaurant → One-to-Many → OpeningHours
+Shops (1) → (N) Products
+Shops (1) → (N) OpeningHours
 
 ---
 
-This module ensures restaurants can properly organize and manage their menu structures.
+This module manages vendors and catalog structure in The Flower Hub system.
