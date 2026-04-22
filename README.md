@@ -1,67 +1,59 @@
-# Feedback, Promotions & Payment Module
+# Feedback & Promotion Module
 
-This module handles customer feedback, promotional systems, and payment tracking.
+### The Flower Hub Database Project
+
+This module manages reviews, coupons, and payments.
 
 ---
 
 ## Responsibilities
 
-- Customer reviews
-- Restaurant rating system
-- Coupon validation
-- Payment transaction logging
+* Customer reviews
+* Rating system
+* Coupon validation
+* Payment logs
 
 ---
 
-## Core Tables
+## Tables Implemented
 
-Reviews
+### Reviews
 
-Stores customer feedback for completed orders.
+Attributes:
 
-Attributes include:
-
-- id
-- order_id
-- customer_id
-- rating
-- comment
-- created_at
+* review_id
+* order_id
+* customer_id
+* rating
+* comment
+* created_at
 
 ---
 
-Coupons
+### Coupons
 
-Stores promotional discount codes.
+Attributes:
 
-Attributes include:
-
-- code
-- discount_percent
-- expiry_date
+* code
+* discount_percent
+* expiry_date
 
 ---
 
-Payments
+### Payments
 
-Tracks payment transactions.
+Attributes:
 
-Attributes include:
-
-- transaction_id
-- payment_method
-- payment_status
+* transaction_id
+* payment_method
+* status
 
 ---
 
-## Database Logic
+## Relationships
 
-Stored procedures may be used for:
-
-- Coupon validation
-- Discount application
-- Payment verification
+Orders (1) → (N) Reviews
 
 ---
 
-This module improves customer engagement and loyalty within the system.
+This module handles feedback and promotion logic.
