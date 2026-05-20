@@ -46,12 +46,12 @@ Attributes:
 
 ## Relationships
 
-Order (N) → (0..1) Coupon
-Orders (1) ↔ (0..1) Review
-Order_Details (N) → (1) Order
-Order (N) → (1) User
-Order (N) → (1) User
-Order (N) → (1) Shop
+* Order (N) → (0..1) Coupon
+* Orders (1) ↔ (0..1) Review
+* Order_Details (N) → (1) Order
+* Order (N) → (1) User
+* Order (N) → (1) User
+* Order (N) → (1) Shop
 
 ---
 
