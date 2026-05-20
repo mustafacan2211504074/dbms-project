@@ -1,0 +1,89 @@
+-- Roles
+INSERT INTO Roles (role_name) VALUES ('Admin');    -- ID: 1
+INSERT INTO Roles (role_name) VALUES ('Customer'); -- ID: 2
+INSERT INTO Roles (role_name) VALUES ('Vendor');   -- ID: 3
+INSERT INTO Roles (role_name) VALUES ('Courier');  -- ID: 4
+
+-- Admins
+INSERT INTO Users (role_id, email, password_hash, full_name, phone) 
+VALUES (1, 'mustafa.can@flowerhub.com', 'a1b2c3d4e5f6', 'Mustafa Can', '05550000001');
+
+INSERT INTO Users (role_id, email, password_hash, full_name, phone) 
+VALUES (1, 'esma.arici@flowerhub.com', 'b2c3d4e5f6a1', 'Esma Arici', '05550000002');
+
+INSERT INTO Users (role_id, email, password_hash, full_name, phone) 
+VALUES (1, 'leen.subh@flowerhub.com', 'c3d4e5f6a1b2', 'Leen Mahmoud Mohammed Subh', '05550000003');
+
+INSERT INTO Users (role_id, email, password_hash, full_name, phone) 
+VALUES (1, 'zeynep.ozbudak@flowerhub.com', 'd4e5f6a1b2c3', 'Zeynep Ozbudak', '05550000004');
+
+INSERT INTO Users (role_id, email, password_hash, full_name, phone) 
+VALUES (1, 'cansu.coskun@flowerhub.com', 'e5f6a1b2c3d4', 'Cansu Coskun', '05550000005');
+
+-- Customers
+INSERT INTO Users (role_id, email, password_hash, full_name, phone) 
+VALUES (2, 'farmfall.gamer@gmail.com', 'f6a1b2c3d4e5', 'Burak Yılmaz', '05551112233');
+
+INSERT INTO Users (role_id, email, password_hash, full_name, phone) 
+VALUES (2, 'qiskit.learner@yahoo.com', '1a2b3c4d5e6f', 'Ayşe Demir', '05552223344');
+
+INSERT INTO Users (role_id, email, password_hash, full_name, phone) 
+VALUES (2, 'siber.vatan@proton.me', '2b3c4d5e6f1a', 'Oğuzhan Tekin', '05553334455');
+
+INSERT INTO Users (role_id, email, password_hash, full_name, phone) 
+VALUES (2, 'hackviser.pro@gmail.com', '3c4d5e6f1a2b', 'Merve Çelik', '05554445566');
+
+INSERT INTO Users (role_id, email, password_hash, full_name, phone) 
+VALUES (2, 'merge.games@gmail.com', '4d5e6f1a2b3c', 'Deniz Arslan', '05555556677');
+
+INSERT INTO Users (role_id, email, password_hash, full_name, phone) 
+VALUES (2, 'string.art@hotmail.com', '5e6f1a2b3c4d', 'Gizem Polat', '05556667788');
+
+INSERT INTO Users (role_id, email, password_hash, full_name, phone) 
+VALUES (2, 'filografi.sanat@gmail.com', '6f1a2b3c4d5e', 'Hakan Kurt', '05557778899');
+
+INSERT INTO Users (role_id, email, password_hash, full_name, phone) 
+VALUES (2, 'yildiz.kenter@gmail.com', 'a1b2c3d4e5f6', 'Ceren Aydın', '05558889900');
+
+INSERT INTO Users (role_id, email, password_hash, full_name, phone) 
+VALUES (2, 'atabay.ilac@gmail.com', 'b2c3d4e5f6a1', 'Tarkan Öztürk', '05559990011');
+
+INSERT INTO Users (role_id, email, password_hash, full_name, phone) 
+VALUES (2, 'wokwi.sim@yahoo.com', 'c3d4e5f6a1b2', 'Büşra Şen', '05550001122');
+
+INSERT INTO Users (role_id, email, password_hash, full_name, phone) 
+VALUES (2, 'istanbul.gift@gmail.com', 'd4e5f6a1b2c3', 'Elif Yıldırım', '05551112244');
+
+-- Florists
+INSERT INTO Users (role_id, email, password_hash, full_name, phone) 
+VALUES (3, 'bandirma.cicekci@flowerhub.com', 'e5f6a1b2c3d4', 'Bandırma Çiçek Evi', '02661234567');
+
+INSERT INTO Users (role_id, email, password_hash, full_name, phone) 
+VALUES (3, 'alanya.roses@flowerhub.com', 'f6a1b2c3d4e5', 'Alanya Roses', '02421234567');
+
+INSERT INTO Users (role_id, email, password_hash, full_name, phone) 
+VALUES (3, 'antalya.botanik@flowerhub.com', '1a2b3c4d5e6f', 'Antalya Botanik', '02429876543');
+
+INSERT INTO Users (role_id, email, password_hash, full_name, phone) 
+VALUES (3, 'savir.suit@flowerhub.com', '2b3c4d5e6f1a', 'Sav-ir Çiçekçilik', '02423334455');
+
+INSERT INTO Users (role_id, email, password_hash, full_name, phone) 
+VALUES (3, 'kadikoy.flora@flowerhub.com', '3c4d5e6f1a2b', 'Kadıköy Flora', '02165556677');
+
+-- Couriers
+INSERT INTO Users (role_id, email, password_hash, full_name, phone) 
+VALUES (4, 'cl250.rider@hotmail.com', '4d5e6f1a2b3c', 'Caner Şahin', '05321112233');
+
+INSERT INTO Users (role_id, email, password_hash, full_name, phone) 
+VALUES (4, 'eclutch.master@gmail.com', '5e6f1a2b3c4d', 'Kemal Kaya', '05322223344');
+
+INSERT INTO Users (role_id, email, password_hash, full_name, phone) 
+VALUES (4, 'gdevelop.coder@yahoo.com', '6f1a2b3c4d5e', 'Sinan Koç', '05323334455');
+
+INSERT INTO Users (role_id, email, password_hash, full_name, phone) 
+VALUES (4, 'freertos.dev@gmail.com', 'a1b2c3d4e5f6', 'Volkan Doğan', '05324445566');
+
+INSERT INTO Users (role_id, email, password_hash, full_name, phone) 
+VALUES (4, 'obilet.yolcu@gmail.com', 'b2c3d4e5f6a1', 'Serkan Erdem', '05325556677');
+
+COMMIT;
