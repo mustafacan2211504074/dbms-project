@@ -54,7 +54,7 @@ Stores shop operating hours.
 
 ## Relationships
 
-OpeningHours (N) → (1) Shop
+* OpeningHours (N) → (1) Shop
 
 ---
 
