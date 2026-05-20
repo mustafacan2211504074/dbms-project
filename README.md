@@ -26,7 +26,6 @@ Attributes:
 * shop_id
 * courier_id
 * total_price
-* status
 * order_date
 
 ---
@@ -47,9 +46,12 @@ Attributes:
 
 ## Relationships
 
-Users (1) → (N) Orders
-Orders (N) ↔ (N) Products
-
+Order (N) → (0..1) Coupon
+Orders (1) ↔ (0..1) Review
+Order_Details (N) → (1) Order
+Order (N) → (1) User
+Order (N) → (1) User
+Order (N) → (1) Shop
 ---
 
 This module handles core order processing.
