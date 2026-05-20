@@ -17,14 +17,12 @@ This module is responsible for managing users and authentication for The Flower 
 
 ## Tables Implemented
 
-### Roles
+### Role
 
 Stores system roles:
 
-* Admin
-* Customer
-* Courier
-* Vendor
+* role_id
+* role_name
 
 ---
 
@@ -39,7 +37,6 @@ Attributes:
 * password_hash
 * full_name
 * phone
-* role_id
 
 ---
 
@@ -47,16 +44,17 @@ Attributes:
 
 Stores multiple delivery addresses per user.
 
-Relationship:
+* address_id
+* user_id
+* location
 
-Users (1) → (N) UserAddresses
 
----
+
 
 ## Relationships
 
-Roles (1) → (N) Users
-Users (1) → (N) UserAddresses
+User (N) → (1) Roles
+UserAddresses (0..N) → (1) User
 
 ---
 
