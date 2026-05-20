@@ -53,8 +53,8 @@ Stores multiple delivery addresses per user.
 
 ## Relationships
 
-User (N) → (1) Roles
-UserAddresses (0..N) → (1) User
+* User (N) → (1) Roles
+* UserAddresses (0..N) → (1) User
 
 ---
 
