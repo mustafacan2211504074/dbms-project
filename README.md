@@ -52,6 +52,7 @@ Order_Details (N) → (1) Order
 Order (N) → (1) User
 Order (N) → (1) User
 Order (N) → (1) Shop
+
 ---
 
 This module handles core order processing.
