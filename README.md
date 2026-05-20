@@ -27,7 +27,6 @@ Attributes:
 * name
 * address
 * rating
-* owner_id
 * is_active
 
 ---
@@ -47,12 +46,15 @@ Defines product categories:
 
 Stores shop operating hours.
 
+* hour_id
+* shop_id
+* time_details
+
 ---
 
 ## Relationships
 
-Shops (1) → (N) Products
-Shops (1) → (N) OpeningHours
+OpeningHours (N) → (1) Shop
 
 ---
 
