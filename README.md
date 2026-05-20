@@ -52,8 +52,8 @@ Tracks stock movements.
 
 ## Relationships
 
-Products (N) → (1) Shops 
-Products (N) → (N) InventoryLogs
+* Products (N) → (1) Shops 
+* Products (N) → (N) InventoryLogs
 
 ---
 
