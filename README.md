@@ -17,13 +17,11 @@ This module manages products and inventory tracking.
 
 ## Tables Implemented
 
-### Products
+### Product
 
 Attributes:
 
 * product_id
-* shop_id
-* category_id
 * name
 * price
 * stock_quantity
@@ -45,12 +43,17 @@ Optional add-ons:
 
 Tracks stock movements.
 
+* log_id
+* product_id
+* change_amount
+* timestamp
+
 ---
 
 ## Relationships
 
-Shops (1) → (N) Products
-Products (1) → (N) InventoryLogs
+Products (N) → (1) Shops 
+Products (N) → (N) InventoryLogs
 
 ---
 
