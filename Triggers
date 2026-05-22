@@ -3,10 +3,9 @@
 CREATE OR REPLACE TRIGGER trg_track_inventory_changes
 AFTER UPDATE ON Products
 FOR EACH ROW
-
 BEGIN
-    INSERT INTO InventoryLogs (product_id, change_amount, timestamp)
-    VALUES (:NEW.product_id, (:NEW.stock_quantity - :OLD.stock_quantity),'STOCK_UPDATE', SYSDATE);
+    INSERT INTO InventoryLogs (product_id, change_amount, action_type, timestamp)
+    VALUES (:NEW.product_id, (:NEW.stock_quantity - :OLD.stock_quantity), 'STOCK_UPDATE', SYSDATE);
 END;
 /
 
@@ -15,7 +14,6 @@ END;
 CREATE OR REPLACE TRIGGER trg_process_order_stock
 AFTER INSERT ON OrderDetails
 FOR EACH ROW
-
 BEGIN
     UPDATE Products
     SET stock_quantity = stock_quantity - :NEW.quantity
@@ -30,10 +28,9 @@ BEFORE INSERT ON OrderDetails
 FOR EACH ROW
 DECLARE
     v_current_stock NUMBER;
-
 BEGIN
-    SELECT stock_quantity INTO v_current_stock 
-    FROM Products 
+    SELECT stock_quantity INTO v_current_stock
+    FROM Products
     WHERE product_id = :NEW.product_id;
 
     IF v_current_stock < :NEW.quantity THEN
