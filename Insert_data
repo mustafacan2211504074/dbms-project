@@ -60,31 +60,31 @@ COMMIT;
 
 -- InventoryLogs
 
-INSERT INTO InventoryLogs (product_id, change_amount, timestamp) VALUES (1, 50, SYSDATE - 10);
-INSERT INTO InventoryLogs (product_id, change_amount, timestamp) VALUES (2, 30, SYSDATE - 10);
-INSERT INTO InventoryLogs (product_id, change_amount, timestamp) VALUES (3, 40, SYSDATE - 9);
-INSERT INTO InventoryLogs (product_id, change_amount, timestamp) VALUES (4, 100, SYSDATE - 9);
-INSERT INTO InventoryLogs (product_id, change_amount, timestamp) VALUES (5, 25, SYSDATE - 8);
-INSERT INTO InventoryLogs (product_id, change_amount, timestamp) VALUES (6, 15, SYSDATE - 8);
-INSERT INTO InventoryLogs (product_id, change_amount, timestamp) VALUES (7, 35, SYSDATE - 7);
-INSERT INTO InventoryLogs (product_id, change_amount, timestamp) VALUES (8, 20, SYSDATE - 7);
-INSERT INTO InventoryLogs (product_id, change_amount, timestamp) VALUES (9, 60, SYSDATE - 6);
-INSERT INTO InventoryLogs (product_id, change_amount, timestamp) VALUES (10, 12, SYSDATE - 6);
-INSERT INTO InventoryLogs (product_id, change_amount, timestamp) VALUES (11, 45, SYSDATE - 5);
-INSERT INTO InventoryLogs (product_id, change_amount, timestamp) VALUES (12, 80, SYSDATE - 5);
-INSERT INTO InventoryLogs (product_id, change_amount, timestamp) VALUES (13, 18, SYSDATE - 4);
-INSERT INTO InventoryLogs (product_id, change_amount, timestamp) VALUES (14, 10, SYSDATE - 4);
-INSERT INTO InventoryLogs (product_id, change_amount, timestamp) VALUES (15, 55, SYSDATE - 3);
-INSERT INTO InventoryLogs (product_id, change_amount, timestamp) VALUES (16, 30, SYSDATE - 3);
-INSERT INTO InventoryLogs (product_id, change_amount, timestamp) VALUES (17, 15, SYSDATE - 2);
-INSERT INTO InventoryLogs (product_id, change_amount, timestamp) VALUES (18, 200, SYSDATE - 2);
-INSERT INTO InventoryLogs (product_id, change_amount, timestamp) VALUES (19, 40, SYSDATE - 1);
-INSERT INTO InventoryLogs (product_id, change_amount, timestamp) VALUES (20, 40, SYSDATE - 1);
-INSERT INTO InventoryLogs (product_id, change_amount, timestamp) VALUES (21, 22, SYSDATE);
-INSERT INTO InventoryLogs (product_id, change_amount, timestamp) VALUES (22, 50, SYSDATE);
-INSERT INTO InventoryLogs (product_id, change_amount, timestamp) VALUES (23, 35, SYSDATE);
-INSERT INTO InventoryLogs (product_id, change_amount, timestamp) VALUES (24, 14, SYSDATE);
-INSERT INTO InventoryLogs (product_id, change_amount, timestamp) VALUES (25, 25, SYSDATE);
+INSERT INTO InventoryLogs (product_id, change_amount, action_type, timestamp) VALUES (1, 50, 'INITIAL_STOCK', SYSDATE - 10);
+INSERT INTO InventoryLogs (product_id, change_amount, action_type, timestamp) VALUES (2, 30, 'INITIAL_STOCK', SYSDATE - 10);
+INSERT INTO InventoryLogs (product_id, change_amount, action_type, timestamp) VALUES (3, 40, 'INITIAL_STOCK', SYSDATE - 9);
+INSERT INTO InventoryLogs (product_id, change_amount, action_type, timestamp) VALUES (4, 100, 'INITIAL_STOCK', SYSDATE - 9);
+INSERT INTO InventoryLogs (product_id, change_amount, action_type, timestamp) VALUES (5, 25, 'INITIAL_STOCK', SYSDATE - 8);
+INSERT INTO InventoryLogs (product_id, change_amount, action_type, timestamp) VALUES (6, 15, 'INITIAL_STOCK', SYSDATE - 8);
+INSERT INTO InventoryLogs (product_id, change_amount, action_type, timestamp) VALUES (7, 35, 'INITIAL_STOCK', SYSDATE - 7);
+INSERT INTO InventoryLogs (product_id, change_amount, action_type, timestamp) VALUES (8, 20, 'INITIAL_STOCK', SYSDATE - 7);
+INSERT INTO InventoryLogs (product_id, change_amount, action_type, timestamp) VALUES (9, 60, 'INITIAL_STOCK', SYSDATE - 6);
+INSERT INTO InventoryLogs (product_id, change_amount, action_type, timestamp) VALUES (10, 12, 'INITIAL_STOCK', SYSDATE - 6);
+INSERT INTO InventoryLogs (product_id, change_amount, action_type, timestamp) VALUES (11, 45, 'INITIAL_STOCK', SYSDATE - 5);
+INSERT INTO InventoryLogs (product_id, change_amount, action_type, timestamp) VALUES (12, 80, 'INITIAL_STOCK', SYSDATE - 5);
+INSERT INTO InventoryLogs (product_id, change_amount, action_type, timestamp) VALUES (13, 18, 'INITIAL_STOCK', SYSDATE - 4);
+INSERT INTO InventoryLogs (product_id, change_amount, action_type, timestamp) VALUES (14, 10, 'INITIAL_STOCK', SYSDATE - 4);
+INSERT INTO InventoryLogs (product_id, change_amount, action_type, timestamp) VALUES (15, 55, 'INITIAL_STOCK', SYSDATE - 3);
+INSERT INTO InventoryLogs (product_id, change_amount, action_type, timestamp) VALUES (16, 30, 'INITIAL_STOCK', SYSDATE - 3);
+INSERT INTO InventoryLogs (product_id, change_amount, action_type, timestamp) VALUES (17, 15, 'INITIAL_STOCK', SYSDATE - 2);
+INSERT INTO InventoryLogs (product_id, change_amount, action_type, timestamp) VALUES (18, 200, 'INITIAL_STOCK', SYSDATE - 2);
+INSERT INTO InventoryLogs (product_id, change_amount, action_type, timestamp) VALUES (19, 40, 'INITIAL_STOCK', SYSDATE - 1);
+INSERT INTO InventoryLogs (product_id, change_amount, action_type, timestamp) VALUES (20, 40, 'INITIAL_STOCK', SYSDATE - 1);
+INSERT INTO InventoryLogs (product_id, change_amount, action_type, timestamp) VALUES (21, 22, 'INITIAL_STOCK', SYSDATE);
+INSERT INTO InventoryLogs (product_id, change_amount, action_type, timestamp) VALUES (22, 50, 'INITIAL_STOCK', SYSDATE);
+INSERT INTO InventoryLogs (product_id, change_amount, action_type, timestamp) VALUES (23, 35, 'INITIAL_STOCK', SYSDATE);
+INSERT INTO InventoryLogs (product_id, change_amount, action_type, timestamp) VALUES (24, 14, 'INITIAL_STOCK', SYSDATE);
+INSERT INTO InventoryLogs (product_id, change_amount, action_type, timestamp) VALUES (25, 25, 'INITIAL_STOCK', SYSDATE);
 
 COMMIT;
 
