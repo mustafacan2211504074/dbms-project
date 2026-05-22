@@ -6,7 +6,7 @@ FOR EACH ROW
 
 BEGIN
     INSERT INTO InventoryLogs (product_id, change_amount, timestamp)
-    VALUES (:NEW.product_id, (:NEW.stock_quantity - :OLD.stock_quantity), SYSDATE);
+    VALUES (:NEW.product_id, (:NEW.stock_quantity - :OLD.stock_quantity),'STOCK_UPDATE', SYSDATE);
 END;
 /
 
