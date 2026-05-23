@@ -1,0 +1,12 @@
+SELECT 
+    p.product_id AS ProductID,
+    p.name AS ProductName,
+    p.shop_id AS ShopID,
+    p.price AS ProductPrice,
+    COUNT(il.log_id) AS TotalMovementCount
+FROM Products p
+JOIN InventoryLogs il ON p.product_id = il.product_id
+WHERE p.price > 100
+GROUP BY p.product_id, p.name, p.shop_id, p.price
+HAVING COUNT(il.log_id) > 0
+ORDER BY TotalMovementCount DESC, p.name ASC;
