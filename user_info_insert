@@ -112,5 +112,15 @@ INSERT INTO Users (user_id, role_id, email, password_hash, full_name, phone) VAL
 INSERT INTO Users (user_id, role_id, email, password_hash, full_name, phone) VALUES (124, 2, 'customer24@gmail.com', 'hash_c24', 'Selin Yavuz', '05321000024');
 INSERT INTO Users (user_id, role_id, email, password_hash, full_name, phone) VALUES (125, 2, 'customer25@gmail.com', 'hash_c25', 'Ozan Gok', '05321000025');
 
+-- UserAddresses datas
+INSERT INTO UserAddresses (user_id, location) VALUES (101, 'Ataturk Bulvari No:15, Alanya, Antalya');
+INSERT INTO UserAddresses (user_id, location) VALUES (101, 'Cleopatra Plaji Arkasi Sokak No:3, Alanya, Antalya'); 
+INSERT INTO UserAddresses (user_id, location) VALUES (102, 'Liman Caddesi No:8, Bandirma, Balikesir');
+INSERT INTO UserAddresses (user_id, location) VALUES (103, 'Kadikoy Moda Caddesi No:12, Istanbul');
+INSERT INTO UserAddresses (user_id, location) VALUES (26, 'Konyaalti Sahil Yolu No:4, Antalya');
+INSERT INTO UserAddresses (user_id, location) VALUES (27, 'Istiklal Caddesi No:45, Istanbul');
+INSERT INTO UserAddresses (user_id, location) VALUES (28, 'Cumhuriyet Meydani No:1, Bandirma, Balikesir');
+
+
 COMMIT;
 
