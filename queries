@@ -1,0 +1,13 @@
+SELECT 
+    u.user_id AS AccountID,
+    u.full_name AS AccountOwner,
+    r.role_name AS RoleType,
+    u.email AS ContactEmail,
+    COUNT(a.address_id) AS SavedAddressCount
+FROM Users u
+JOIN Roles r ON u.role_id = r.role_id
+LEFT JOIN UserAddresses a ON u.user_id = a.user_id
+WHERE r.role_name IN ('Customer', 'Vendor')
+GROUP BY u.user_id, u.full_name, r.role_name, u.email
+HAVING COUNT(a.address_id) > 0
+ORDER BY SavedAddressCount DESC, u.full_name ASC;
