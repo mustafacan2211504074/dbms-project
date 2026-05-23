@@ -31,15 +31,18 @@ CREATE TABLE Coupon (
 
 
 -- ==========================================
--- 2. CORE SCHEMAS (Renamed & Finalized)
+-- 2. CORE SCHEMAS (With owner_id & Fixed Reserved Word)
 -- ==========================================
 
+-- Shop table (Fixed: Added owner_id to link shops with vendors/users)
 CREATE TABLE Shop (
     shop_id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
     address VARCHAR(255),
     rating DECIMAL(2,1) CHECK (rating BETWEEN 0 AND 5),
-    is_active BOOLEAN DEFAULT TRUE
+    owner_id INT,
+    is_active BOOLEAN DEFAULT TRUE,
+    FOREIGN KEY (owner_id) REFERENCES User(user_id) ON DELETE SET NULL
 );
 
 CREATE TABLE Category (
@@ -66,7 +69,7 @@ CREATE TABLE Product (
     FOREIGN KEY (shop_id) REFERENCES Shop(shop_id) ON DELETE CASCADE
 );
 
--- Renamed from "Order" to "Orders" to avoid reserved word conflicts
+-- Orders table (Fixed Oracle reserved word conflict)
 CREATE TABLE Orders (
     order_id INT PRIMARY KEY AUTO_INCREMENT,
     order_date DATETIME DEFAULT CURRENT_TIMESTAMP,
@@ -104,30 +107,35 @@ CREATE TABLE Review (
 -- 3. DATA INSERTIONS (25 Entries Per Table)
 -- ==========================================
 
--- PRE-REQUISITES (Users and Roles to support the operational tables)
+-- PRE-REQUISITES (Customers 1-5, Couriers 6-7, and Mock Vendors 8-9)
 INSERT INTO User (email, password_hash, full_name, phone) VALUES
-('adam@test.com', 'hash', 'Adam Smith', '12345'), ('zeynep@test.com', 'hash', 'Zeynep Yılmaz', '12346'),
-('cansu@test.com', 'hash', 'Cansu Demir', '12347'), ('john@test.com', 'hash', 'John Doe', '12348'),
-('jane@test.com', 'hash', 'Jane Doe', '12349'), ('courier1@test.com', 'hash', 'Ali Cabbar', '12350'),
-('courier2@test.com', 'hash', 'Mehmet Avcı', '12351');
+('adam@test.com', 'hash', 'Adam Smith', '12345'), 
+('zeynep@test.com', 'hash', 'Zeynep Yılmaz', '12346'),
+('cansu@test.com', 'hash', 'Cansu Demir', '12347'), 
+('john@test.com', 'hash', 'John Doe', '12348'),
+('jane@test.com', 'hash', 'Jane Doe', '12349'), 
+('courier1@test.com', 'hash', 'Ali Cabbar', '12350'),
+('courier2@test.com', 'hash', 'Mehmet Avcı', '12351'),
+('vendor1@test.com', 'hash', 'Ahmet Yılmaz (Vendor)', '12352'),
+('vendor2@test.com', 'hash', 'Ayşe Demir (Vendor)', '12353');
 
 INSERT INTO Coupon (code, discount_percent, expiry_date) VALUES ('WELCOME10', 10.00, '2026-12-31');
 
--- A. SHOP TABLE (25 Entries)
-INSERT INTO Shop (name, address, rating, is_active) VALUES
-('Rose Garden', 'Istanbul, Sisli', 4.5, TRUE), ('Tulip House', 'Amsterdam, Central', 4.7, TRUE),
-('Orchid Oasis', 'Istanbul, Kadikoy', 4.2, TRUE), ('Lily Boutique', 'Paris, Rue de Rivoli', 4.8, TRUE),
-('Daisy Chain', 'London, Soho', 4.0, TRUE), ('Jasmine Scents', 'Cairo, Maadi', 4.3, TRUE),
-('Sunflower Hub', 'Austin, Downtown', 4.6, TRUE), ('Violet Corner', 'Rome, Prati', 4.1, TRUE),
-('Lotus Wellness', 'Tokyo, Shibuya', 4.9, TRUE), ('Begonia Blooms', 'Berlin, Mitte', 3.9, TRUE),
-('Marigold Market', 'Mumbai, Bandra', 4.4, TRUE), ('Magnolia Petals', 'Atlanta, Midtown', 4.5, TRUE),
-('Iris Expressions', 'Dublin, City Centre', 4.2, TRUE), ('Peony Palace', 'Beijing, Chaoyang', 4.7, TRUE),
-('Lavender Fields', 'Provence, Center', 4.8, TRUE), ('Camellia Creations', 'Kyoto, Gion', 4.3, TRUE),
-('Azalea Avenue', 'Portland, Pearl', 4.0, TRUE), ('Poppy Parcels', 'Vienna, Landstraße', 4.2, TRUE),
-('Dahlia Delights', 'Mexico City, Condesa', 4.6, TRUE), ('Fern & Flora', 'Seattle, Capitol Hill', 4.4, TRUE),
-('Cactus Haven', 'Phoenix, Arcadia', 4.1, TRUE), ('Bonsai Studio', 'Osaka, Kita', 4.9, TRUE),
-('Aloe Verity', 'Cape Town, Green Point', 4.3, TRUE), ('Ivy League Greens', 'Boston, Back Bay', 4.2, TRUE),
-('Petunia Patch', 'Toronto, Annex', 4.0, TRUE);
+-- A. SHOP TABLE (25 Entries - Fixed: owner_id added for every shop)
+INSERT INTO Shop (name, address, rating, owner_id, is_active) VALUES
+('Rose Garden', 'Istanbul, Sisli', 4.5, 8, TRUE), ('Tulip House', 'Amsterdam, Central', 4.7, 9, TRUE),
+('Orchid Oasis', 'Istanbul, Kadikoy', 4.2, 8, TRUE), ('Lily Boutique', 'Paris, Rue de Rivoli', 4.8, 9, TRUE),
+('Daisy Chain', 'London, Soho', 4.0, 8, TRUE), ('Jasmine Scents', 'Cairo, Maadi', 4.3, 9, TRUE),
+('Sunflower Hub', 'Austin, Downtown', 4.6, 8, TRUE), ('Violet Corner', 'Rome, Prati', 4.1, 9, TRUE),
+('Lotus Wellness', 'Tokyo, Shibuya', 4.9, 8, TRUE), ('Begonia Blooms', 'Berlin, Mitte', 3.9, 9, TRUE),
+('Marigold Market', 'Mumbai, Bandra', 4.4, 8, TRUE), ('Magnolia Petals', 'Atlanta, Midtown', 4.5, 9, TRUE),
+('Iris Expressions', 'Dublin, City Centre', 4.2, 8, TRUE), ('Peony Palace', 'Beijing, Chaoyang', 4.7, 9, TRUE),
+('Lavender Fields', 'Provence, Center', 4.8, 8, TRUE), ('Camellia Creations', 'Kyoto, Gion', 4.3, 9, TRUE),
+('Azalea Avenue', 'Portland, Pearl', 4.0, 8, TRUE), ('Poppy Parcels', 'Vienna, Landstraße', 4.2, 9, TRUE),
+('Dahlia Delights', 'Mexico City, Condesa', 4.6, 8, TRUE), ('Fern & Flora', 'Seattle, Capitol Hill', 4.4, 9, TRUE),
+('Cactus Haven', 'Phoenix, Arcadia', 4.1, 8, TRUE), ('Bonsai Studio', 'Osaka, Kita', 4.9, 9, TRUE),
+('Aloe Verity', 'Cape Town, Green Point', 4.3, 8, TRUE), ('Ivy League Greens', 'Boston, Back Bay', 4.2, 9, TRUE),
+('Petunia Patch', 'Toronto, Annex', 4.0, 8, TRUE);
 
 -- B. CATEGORY TABLE (25 Entries)
 INSERT INTO Category (category_name) VALUES
@@ -151,7 +159,7 @@ INSERT INTO OpeningHours (shop_id, time_details) VALUES
 (22, 'Everyday: 11:00-20:00'), (23, 'Thu-Tue: 09:00-18:00'), (24, 'Mon-Fri: 08:00-16:00'),
 (25, 'Mon-Sat: 09:30-20:30');
 
--- PRE-REQUISITES (Products needed to establish Order Details records)
+-- PRE-REQUISITES (Products needed to establish Orders & OrderDetails)
 INSERT INTO Product (name, price, description, stock_quantity, category_id, shop_id) VALUES
 ('Red Roses Bouquet', 50.00, '12 fresh red roses', 100, 1, 1),
 ('Yellow Tulips Pack', 35.00, 'Beautiful spring tulips', 50, 2, 2),
