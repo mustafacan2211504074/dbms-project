@@ -1,0 +1,12 @@
+SELECT 
+    r.order_id AS OrderID,
+    r.customer_id AS CustomerID,
+    r.rating AS CustomerRating,
+    r.comments AS CustomerFeedback,
+    p.payment_method AS PaymentMethod,
+    p.payment_status AS PaymentStatus,
+    p.transaction_id AS TransactionID
+FROM Reviews r
+JOIN Payments p ON r.order_id = p.order_id
+WHERE p.payment_status = 'Completed' AND r.rating <= 4
+ORDER BY r.rating ASC;
