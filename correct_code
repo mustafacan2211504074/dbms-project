@@ -395,7 +395,6 @@ INSERT INTO Categories (category_id, category_name) VALUES (18, 'Red Poppies');
 INSERT INTO Categories (category_id, category_name) VALUES (19, 'Show Dahlias');
 INSERT INTO Categories (category_id, category_name) VALUES (20, 'Potted Ferns');
 INSERT INTO Categories (category_id, category_name) VALUES (21, 'Desert Cacti');
--- 22 Numaralı kategorideki & işareti temizlendi:
 INSERT INTO Categories (category_id, category_name) VALUES (22, 'Indoor Bonsai');
 INSERT INTO Categories (category_id, category_name) VALUES (23, 'Succulents ' || '&' || ' Aloe');
 INSERT INTO Categories (category_id, category_name) VALUES (24, 'Climbing Ivy');
