@@ -346,60 +346,63 @@ INSERT INTO Coupons (code, discount_percent, expiry_date, is_active) VALUES ('CO
 
 -- LEEN INSERTS
 
-INSERT INTO Shops (name, address, rating, owner_id, is_active) VALUES ('Rose Garden', 'Istanbul, Sisli', 4.5, 26, 1);
-INSERT INTO Shops (name, address, rating, owner_id, is_active) VALUES ('Tulip House', 'Amsterdam, Central', 4.7, 27, 1);
-INSERT INTO Shops (name, address, rating, owner_id, is_active) VALUES ('Orchid Oasis', 'Istanbul, Kadikoy', 4.2, 28, 1);
-INSERT INTO Shops (name, address, rating, owner_id, is_active) VALUES ('Lily Boutique', 'Paris, Rue de Rivoli', 4.8, 29, 1);
-INSERT INTO Shops (name, address, rating, owner_id, is_active) VALUES ('Daisy Chain', 'London, Soho', 4.0, 30, 1);
-INSERT INTO Shops (name, address, rating, owner_id, is_active) VALUES ('Jasmine Scents', 'Cairo, Maadi', 4.3, 31, 1);
-INSERT INTO Shops (name, address, rating, owner_id, is_active) VALUES ('Sunflower Hub', 'Austin, Downtown', 4.6, 32, 1);
-INSERT INTO Shops (name, address, rating, owner_id, is_active) VALUES ('Violet Corner', 'Rome, Prati', 4.1, 33, 1);
-INSERT INTO Shops (name, address, rating, owner_id, is_active) VALUES ('Lotus Wellness', 'Tokyo, Shibuya', 4.9, 34, 1);
-INSERT INTO Shops (name, address, rating, owner_id, is_active) VALUES ('Begonia Blooms', 'Berlin, Mitte', 3.9, 35, 1);
-INSERT INTO Shops (name, address, rating, owner_id, is_active) VALUES ('Marigold Market', 'Mumbai, Bandra', 4.4, 36, 1);
-INSERT INTO Shops (name, address, rating, owner_id, is_active) VALUES ('Magnolia Petals', 'Atlanta, Midtown', 4.5, 37, 1);
-INSERT INTO Shops (name, address, rating, owner_id, is_active) VALUES ('Iris Expressions', 'Dublin, City Centre', 4.2, 38, 1);
-INSERT INTO Shops (name, address, rating, owner_id, is_active) VALUES ('Peony Palace', 'Beijing, Chaoyang', 4.7, 39, 1);
-INSERT INTO Shops (name, address, rating, owner_id, is_active) VALUES ('Lavender Fields', 'Provence, Center', 4.8, 40, 1);
-INSERT INTO Shops (name, address, rating, owner_id, is_active) VALUES ('Camellia Creations', 'Kyoto, Gion', 4.3, 41, 1);
-INSERT INTO Shops (name, address, rating, owner_id, is_active) VALUES ('Azalea Avenue', 'Portland, Pearl', 4.0, 42, 1);
-INSERT INTO Shops (name, address, rating, owner_id, is_active) VALUES ('Poppy Parcels', 'Vienna, Landstraße', 4.2, 43, 1);
-INSERT INTO Shops (name, address, rating, owner_id, is_active) VALUES ('Dahlia Delights', 'Mexico City, Condesa', 4.6, 44, 1);
-INSERT INTO Shops (name, address, rating, owner_id, is_active) VALUES ('Fern & Flora', 'Seattle, Capitol Hill', 4.4, 45, 1);
-INSERT INTO Shops (name, address, rating, owner_id, is_active) VALUES ('Cactus Haven', 'Phoenix, Arcadia', 4.1, 46, 1);
-INSERT INTO Shops (name, address, rating, owner_id, is_active) VALUES ('Bonsai Studio', 'Osaka, Kita', 4.9, 47, 1);
-INSERT INTO Shops (name, address, rating, owner_id, is_active) VALUES ('Aloe Verity', 'Cape Town, Green Point', 4.3, 48, 1);
-INSERT INTO Shops (name, address, rating, owner_id, is_active) VALUES ('Ivy League Greens', 'Boston, Back Bay', 4.2, 49, 1);
-INSERT INTO Shops (name, address, rating, owner_id, is_active) VALUES ('Petunia Patch', 'Toronto, Annex', 4.0, 50, 1);
+-- A. SHOPS TABLE
+INSERT INTO Shops (shop_id, name, address, rating, owner_id, is_active) VALUES (1, 'Rose Garden', 'Istanbul, Sisli', 4.5, 26, 1);
+INSERT INTO Shops (shop_id, name, address, rating, owner_id, is_active) VALUES (2, 'Tulip House', 'Amsterdam, Central', 4.7, 27, 1);
+INSERT INTO Shops (shop_id, name, address, rating, owner_id, is_active) VALUES (3, 'Orchid Oasis', 'Istanbul, Kadikoy', 4.2, 28, 1);
+INSERT INTO Shops (shop_id, name, address, rating, owner_id, is_active) VALUES (4, 'Lily Boutique', 'Paris, Rue de Rivoli', 4.8, 29, 1);
+INSERT INTO Shops (shop_id, name, address, rating, owner_id, is_active) VALUES (5, 'Daisy Chain', 'London, Soho', 4.0, 30, 1);
+INSERT INTO Shops (shop_id, name, address, rating, owner_id, is_active) VALUES (6, 'Jasmine Scents', 'Cairo, Maadi', 4.3, 31, 1);
+INSERT INTO Shops (shop_id, name, address, rating, owner_id, is_active) VALUES (7, 'Sunflower Hub', 'Austin, Downtown', 4.6, 32, 1);
+INSERT INTO Shops (shop_id, name, address, rating, owner_id, is_active) VALUES (8, 'Violet Corner', 'Rome, Prati', 4.1, 33, 1);
+INSERT INTO Shops (shop_id, name, address, rating, owner_id, is_active) VALUES (9, 'Lotus Wellness', 'Tokyo, Shibuya', 4.9, 34, 1);
+INSERT INTO Shops (shop_id, name, address, rating, owner_id, is_active) VALUES (10, 'Begonia Blooms', 'Berlin, Mitte', 3.9, 35, 1);
+INSERT INTO Shops (shop_id, name, address, rating, owner_id, is_active) VALUES (11, 'Marigold Market', 'Mumbai, Bandra', 4.4, 36, 1);
+INSERT INTO Shops (shop_id, name, address, rating, owner_id, is_active) VALUES (12, 'Magnolia Petals', 'Atlanta, Midtown', 4.5, 37, 1);
+INSERT INTO Shops (shop_id, name, address, rating, owner_id, is_active) VALUES (13, 'Iris Expressions', 'Dublin, City Centre', 4.2, 38, 1);
+INSERT INTO Shops (shop_id, name, address, rating, owner_id, is_active) VALUES (14, 'Peony Palace', 'Beijing, Chaoyang', 4.7, 39, 1);
+INSERT INTO Shops (shop_id, name, address, rating, owner_id, is_active) VALUES (15, 'Lavender Fields', 'Provence, Center', 4.8, 40, 1);
+INSERT INTO Shops (shop_id, name, address, rating, owner_id, is_active) VALUES (16, 'Camellia Creations', 'Kyoto, Gion', 4.3, 41, 1);
+INSERT INTO Shops (shop_id, name, address, rating, owner_id, is_active) VALUES (17, 'Azalea Avenue', 'Portland, Pearl', 4.0, 42, 1);
+INSERT INTO Shops (shop_id, name, address, rating, owner_id, is_active) VALUES (18, 'Poppy Parcels', 'Vienna, Landstraße', 4.2, 43, 1);
+INSERT INTO Shops (shop_id, name, address, rating, owner_id, is_active) VALUES (19, 'Dahlia Delights', 'Mexico City, Condesa', 4.6, 44, 1);
+-- 20 Numaralı dükkandaki & işareti temizlendi:
+INSERT INTO Shops (shop_id, name, address, rating, owner_id, is_active) VALUES (20, 'Fern ' || '&' || ' Flora', 'Seattle, Capitol Hill', 4.4, 45, 1);
+INSERT INTO Shops (shop_id, name, address, rating, owner_id, is_active) VALUES (21, 'Cactus Haven', 'Phoenix, Arcadia', 4.1, 46, 1);
+INSERT INTO Shops (shop_id, name, address, rating, owner_id, is_active) VALUES (22, 'Bonsai Studio', 'Osaka, Kita', 4.9, 47, 1);
+INSERT INTO Shops (shop_id, name, address, rating, owner_id, is_active) VALUES (23, 'Aloe Verity', 'Cape Town, Green Point', 4.3, 48, 1);
+INSERT INTO Shops (shop_id, name, address, rating, owner_id, is_active) VALUES (24, 'Ivy League Greens', 'Boston, Back Bay', 4.2, 49, 1);
+INSERT INTO Shops (shop_id, name, address, rating, owner_id, is_active) VALUES (25, 'Petunia Patch', 'Toronto, Annex', 4.0, 50, 1);
 
--- B. CATEGORIES TABLE (25 Entries)
-INSERT INTO Categories (category_name) VALUES ('Fresh Roses');
-INSERT INTO Categories (category_name) VALUES ('Luxury Tulips');
-INSERT INTO Categories (category_name) VALUES ('Exotic Orchids');
-INSERT INTO Categories (category_name) VALUES ('Elegant Lilies');
-INSERT INTO Categories (category_name) VALUES ('Wild Daisies');
-INSERT INTO Categories (category_name) VALUES ('Sweet Jasmine');
-INSERT INTO Categories (category_name) VALUES ('Bright Sunflowers');
-INSERT INTO Categories (category_name) VALUES ('Delicate Violets');
-INSERT INTO Categories (category_name) VALUES ('Sacred Lotus');
-INSERT INTO Categories (category_name) VALUES ('Indoor Begonias');
-INSERT INTO Categories (category_name) VALUES ('Golden Marigolds');
-INSERT INTO Categories (category_name) VALUES ('Sweet Magnolias');
-INSERT INTO Categories (category_name) VALUES ('Blue Iris');
-INSERT INTO Categories (category_name) VALUES ('Premium Peonies');
-INSERT INTO Categories (category_name) VALUES ('Dried Lavender');
-INSERT INTO Categories (category_name) VALUES ('Winter Camellias');
-INSERT INTO Categories (category_name) VALUES ('Spring Azaleas');
-INSERT INTO Categories (category_name) VALUES ('Red Poppies');
-INSERT INTO Categories (category_name) VALUES ('Show Dahlias');
-INSERT INTO Categories (category_name) VALUES ('Potted Ferns');
-INSERT INTO Categories (category_name) VALUES ('Desert Cacti');
-INSERT INTO Categories (category_name) VALUES ('Indoor Bonsai');
-INSERT INTO Categories (category_name) VALUES ('Succulents & Aloe');
-INSERT INTO Categories (category_name) VALUES ('Climbing Ivy');
-INSERT INTO Categories (category_name) VALUES ('Mixed Bouquets');
+-- B. CATEGORIES TABLE
+INSERT INTO Categories (category_id, category_name) VALUES (1, 'Fresh Roses');
+INSERT INTO Categories (category_id, category_name) VALUES (2, 'Luxury Tulips');
+INSERT INTO Categories (category_id, category_name) VALUES (3, 'Exotic Orchids');
+INSERT INTO Categories (category_id, category_name) VALUES (4, 'Elegant Lilies');
+INSERT INTO Categories (category_id, category_name) VALUES (5, 'Wild Daisies');
+INSERT INTO Categories (category_id, category_name) VALUES (6, 'Sweet Jasmine');
+INSERT INTO Categories (category_id, category_name) VALUES (7, 'Bright Sunflowers');
+INSERT INTO Categories (category_id, category_name) VALUES (8, 'Delicate Violets');
+INSERT INTO Categories (category_id, category_name) VALUES (9, 'Sacred Lotus');
+INSERT INTO Categories (category_id, category_name) VALUES (10, 'Indoor Begonias');
+INSERT INTO Categories (category_id, category_name) VALUES (11, 'Golden Marigolds');
+INSERT INTO Categories (category_id, category_name) VALUES (12, 'Sweet Magnolias');
+INSERT INTO Categories (category_id, category_name) VALUES (13, 'Blue Iris');
+INSERT INTO Categories (category_id, category_name) VALUES (14, 'Premium Peonies');
+INSERT INTO Categories (category_id, category_name) VALUES (15, 'Dried Lavender');
+INSERT INTO Categories (category_id, category_name) VALUES (16, 'Winter Camellias');
+INSERT INTO Categories (category_id, category_name) VALUES (17, 'Spring Azaleas');
+INSERT INTO Categories (category_id, category_name) VALUES (18, 'Red Poppies');
+INSERT INTO Categories (category_id, category_name) VALUES (19, 'Show Dahlias');
+INSERT INTO Categories (category_id, category_name) VALUES (20, 'Potted Ferns');
+INSERT INTO Categories (category_id, category_name) VALUES (21, 'Desert Cacti');
+-- 22 Numaralı kategorideki & işareti temizlendi:
+INSERT INTO Categories (category_id, category_name) VALUES (22, 'Indoor Bonsai');
+INSERT INTO Categories (category_id, category_name) VALUES (23, 'Succulents ' || '&' || ' Aloe');
+INSERT INTO Categories (category_id, category_name) VALUES (24, 'Climbing Ivy');
+INSERT INTO Categories (category_id, category_name) VALUES (25, 'Mixed Bouquets');
 
--- C. OPENINGHOURS TABLE (25 Entries)
+-- C. OPENINGHOURS TABLE
 INSERT INTO OpeningHours (shop_id, time_details) VALUES (1, 'Mon-Fri: 09:00-18:00');
 INSERT INTO OpeningHours (shop_id, time_details) VALUES (2, 'Mon-Sat: 10:00-20:00');
 INSERT INTO OpeningHours (shop_id, time_details) VALUES (3, 'Everyday: 08:00-22:00');
@@ -426,6 +429,8 @@ INSERT INTO OpeningHours (shop_id, time_details) VALUES (23, 'Thu-Tue: 09:00-18:
 INSERT INTO OpeningHours (shop_id, time_details) VALUES (24, 'Mon-Fri: 08:00-16:00');
 INSERT INTO OpeningHours (shop_id, time_details) VALUES (25, 'Mon-Sat: 09:30-20:30');
 
+COMMIT;
+
 -- LEEN INSERTED
 
 -- CANSU INSERTS
@@ -434,7 +439,7 @@ INSERT INTO Products (shop_id, category_id, name, price, stock_quantity, descrip
 INSERT INTO Products (shop_id, category_id, name, price, stock_quantity, description) VALUES (1, 1, 'White Daisy Orchid Mix', 320.00, 30, 'Fresh daisies paired with a beautiful white orchid');
 INSERT INTO Products (shop_id, category_id, name, price, stock_quantity, description) VALUES (2, 1, 'Pink Tulip Arrangement', 180.00, 40, 'Spring tulips in a stylish glass vase');
 INSERT INTO Products (shop_id, category_id, name, price, stock_quantity, description) VALUES (2, 2, 'Gourmet Chocolate Box', 150.00, 100, 'Handmade dark and milk chocolates');
-INSERT INTO Products (shop_id, category_id, name, price, stock_quantity, description) VALUES (3, 3, 'Teddy Bear & Balloon Pack', 120.00, 25, 'Fluffy teddy bear with a helium happy birthday balloon');
+INSERT INTO Products (shop_id, category_id, name, price, stock_quantity, description) VALUES (3, 3, 'Teddy Bear ' || '&' || ' Balloon Pack', 120.00, 25, 'Fluffy teddy bear with a helium happy birthday balloon');
 INSERT INTO Products (shop_id, category_id, name, price, stock_quantity, description) VALUES (3, 1, 'Blue Hydrangea Pot', 290.00, 15, 'Vibrant blue hydrangeas in a ceramic pot');
 INSERT INTO Products (shop_id, category_id, name, price, stock_quantity, description) VALUES (4, 1, 'Elegant Lily Bouquet', 210.00, 35, 'Scented white lilies perfect for celebrations');
 INSERT INTO Products (shop_id, category_id, name, price, stock_quantity, description) VALUES (4, 2, 'Premium Fruit Basket', 350.00, 20, 'Seasonal fresh fruits arranged beautifully');
@@ -666,7 +671,6 @@ BEGIN
       'PREPARING' 
    ) RETURNING order_id INTO v_new_order_id;
    
-   -- OrderDetails tablosuna da ekleme yapması mantıklı olacaktır:
    INSERT INTO OrderDetails (order_id, product_id, quantity, unit_price)
    VALUES (v_new_order_id, p_product_id, p_quantity, p_unit_price);
    
@@ -675,47 +679,30 @@ END processcheckout;
 
 -- ESMA ADDED PROCEDURE
 
--- CANSU ADDS TRIGGERS
 
-
--- Trigger that logs stock changes
+-- =============================================================================
+-- CANSU ADDS TRIGGERS (DÜZELTİLMİŞ)
+-- =============================================================================
 
 CREATE OR REPLACE TRIGGER trg_track_inventory_changes
 AFTER UPDATE ON Products
 FOR EACH ROW
 BEGIN
-    INSERT INTO InventoryLogs
-    (
+    INSERT INTO InventoryLogs (
         product_id,
         change_amount,
         action_type,
         timestamp
-    )
-    VALUES
-    (
+    ) VALUES (
         :NEW.product_id,
         :NEW.stock_quantity - :OLD.stock_quantity,
         'STOCK_UPDATE',
-        SYSDATE
+        CURRENT_TIMESTAMP
     );
 END;
 /
 
--- Trigger that reduces stock when an order is placed
-
 CREATE OR REPLACE TRIGGER trg_process_order_stock
-AFTER INSERT ON OrderDetails
-FOR EACH ROW
-BEGIN
-    UPDATE Products
-    SET stock_quantity = stock_quantity - :NEW.quantity
-    WHERE product_id = :NEW.product_id;
-END;
-/
-
--- Checking to Prevent Stock from Falling Negative
-
-CREATE OR REPLACE TRIGGER trg_check_stock_limit
 BEFORE INSERT ON OrderDetails
 FOR EACH ROW
 DECLARE
@@ -724,12 +711,15 @@ BEGIN
     SELECT stock_quantity
     INTO v_current_stock
     FROM Products
-    WHERE product_id = :NEW.product_id;
+    WHERE product_id = :NEW.product_id
+    FOR UPDATE;
 
     IF v_current_stock < :NEW.quantity THEN
-        RAISE_APPLICATION_ERROR(-20001, 'Insufficient stock!');
+        RAISE_APPLICATION_ERROR(-20001, 'Insufficient stock for product ID: ' || :NEW.product_id);
     END IF;
+
+    UPDATE Products
+    SET stock_quantity = stock_quantity - :NEW.quantity
+    WHERE product_id = :NEW.product_id;
 END;
 /
-
--- CANSU ADDED TRIGGERS
