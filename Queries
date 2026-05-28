@@ -1,7 +1,7 @@
 -- Problem 1: The marketplace platform needs to identify high-performing vendors to evaluate platform growth and analyze business performance.
 --Management requires visibility into which shops are generating substantial economic activity, specifically filtering out low-performing or inactive vendors.
 
-----------Q1(E)
+-----------------------------------------------------------Q1(E)
 
   s.name AS ShopName,
     COUNT(DISTINCT o.order_id) AS TotalOrderCount,
@@ -16,7 +16,7 @@ ORDER BY TotalRevenue DESC;
 --Problem 2: The operations team and customer support representatives need to track and manage unfulfilled transactions to prevent delays in fulfillment and ensure a smooth customer experience.
 --To optimize workflow efficiency, they require a real-time list of customer orders that are currently stuck in the queue without being processed.
 
------------Q2(E)
+------------------------------------------------------------Q2(E)
 
   SELECT 
     u.full_name AS CustomerName,
@@ -32,7 +32,7 @@ ORDER BY o.order_date DESC;
 -- Problem 3: This query identifies high-performing product categories by filtering for flower shops with an average rating above 4.0.
 -- The insights enable management to optimize the product catalog and promote top-tier categories on the homepage.
 
------------Q3(L)
+--------------------------------------------------------------Q3(L)
 
   SELECT 
     c.category_name AS CategoryName,
@@ -48,7 +48,7 @@ ORDER BY AverageShopRating DESC;
 -- Problem 4: This query identifies active, daily-operating vendors to support operational oversight. 
 -- It combines shop schedules with vendor contact details to streamline administrative communication, profile audits, and onboarding management.
 
-----------Q4(L)
+-----------------------------------------------------------------Q4(L)
 
 SELECT 
     s.name AS ShopName,
@@ -63,9 +63,9 @@ WHERE s.is_active = 1
   AND LOWER(oh.time_details) LIKE '%everyday%'
 ORDER BY s.name ASC;
 
---Problem 5:This query analyzes average customer ratings and total revenue by payment method for successful orders. It provides insights into customer satisfaction and transaction volume to help optimize payment options.
+--Problem 5 : This query analyzes average customer ratings and total revenue by payment method for successful orders. It provides insights into customer satisfaction and transaction volume to help optimize payment options.
 
-----------Q5(Z)
+-------------------------------------------------------------------Q5(Z)
 
 SELECT 
     p.payment_method AS PaymentMethod,
@@ -80,3 +80,79 @@ GROUP BY p.payment_method
 HAVING SUM(o.total_price) > 500
 ORDER BY TotalRevenue DESC;
 
+-- Problem 6 : The inventory management team needs to identify products with critically low stock levels to prevent stockouts and plan restocking orders.
+
+---------------------------------------------------------------------Q6(Z)
+
+
+SELECT 
+    p.name AS ProductName,
+    c.category_name AS CategoryName,
+    p.stock_quantity AS RemainingStock,
+    p.price AS UnitPrice
+FROM Products p
+JOIN Category c ON p.category_id = c.category_id
+WHERE p.stock_quantity < 20
+ORDER BY p.stock_quantity ASC;
+
+-Problem 7 : Customer support needs a quick lookup list for all registered couriers to coordinate urgent delivery issues.
+
+------------------------------------------------------------------------Q7(C)
+
+SELECT 
+    u.full_name AS CourierName,
+    u.email AS CourierEmail,
+    u.phone AS CourierPhone
+FROM Users u
+JOIN Roles r ON u.role_id = r.role_id
+WHERE r.role_name = 'Courier'
+ORDER BY u.full_name ASC;
+
+Problem 8 : The marketing team wants to analyze which specific products are generating critical customer complaints.
+
+-------------------------------------------------------------------------Q8(C)
+
+
+SELECT 
+    s.name AS ShopName,
+    p.name AS ProductName,
+    r.comment AS CustomerComplaint
+FROM Review r
+JOIN OrderDetails od ON r.order_id = od.order_id
+JOIN Product p ON od.product_id = p.product_id
+JOIN Shop s ON p.shop_id = s.shop_id
+WHERE r.rating = 1
+ORDER BY s.name ASC;
+
+Problem 9 : Find the total number of saved delivery addresses for registered Customers and Vendors on the platform, sorting them from highest to lowest to analyze active user engagement.
+
+----------------------------------------------------------------------------Q9(M)
+
+SELECT 
+    u.user_id AS AccountID,
+    u.full_name AS AccountOwner,
+    r.role_name AS RoleType,
+    u.email AS ContactEmail,
+    COUNT(a.address_id) AS SavedAddressCount
+FROM Users u
+JOIN Roles r ON u.role_id = r.role_id
+LEFT JOIN UserAddresses a ON u.user_id = a.user_id
+WHERE r.role_name IN ('Customer', 'Vendor')
+GROUP BY u.user_id, u.full_name, r.role_name, u.email
+HAVING COUNT(a.address_id) > 0
+ORDER BY SavedAddressCount DESC, u.full_name ASC;
+
+Problem 10 : Identify Customers who are registered in the system but have not saved any delivery address yet, allowing the marketing team to send them a "Complete your profile" reminder.
+
+---------------------------------------------------------------------------Q10(M)
+
+SELECT 
+    u.user_id AS CustomerID,
+    u.full_name AS CustomerName,
+    u.email AS ContactEmail,
+    u.phone AS PhoneNumber
+FROM Users u
+JOIN Roles r ON u.role_id = r.role_id
+LEFT JOIN UserAddresses a ON u.user_id = a.user_id
+WHERE r.role_name = 'Customer' AND a.address_id IS NULL
+ORDER BY u.user_id ASC;
