@@ -2,7 +2,7 @@
 --Management requires visibility into which shops are generating substantial economic activity, specifically filtering out low-performing or inactive vendors.
 
 -----------------------------------------------------------Q1(E)
-
+ SELECT
   s.name AS ShopName,
     COUNT(DISTINCT o.order_id) AS TotalOrderCount,
     SUM(od.quantity * od.unit_price) AS TotalRevenue
