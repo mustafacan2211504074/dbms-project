@@ -91,7 +91,7 @@ SELECT
     p.stock_quantity AS RemainingStock,
     p.price AS UnitPrice
 FROM Products p
-JOIN Category c ON p.category_id = c.category_id
+JOIN Categories c ON p.category_id = c.category_id
 WHERE p.stock_quantity < 20
 ORDER BY p.stock_quantity ASC;
 
@@ -116,11 +116,11 @@ Problem 8 : The marketing team wants to analyze which specific products are gene
 SELECT 
     s.name AS ShopName,
     p.name AS ProductName,
-    r.comment AS CustomerComplaint
-FROM Review r
+    r.review_text AS CustomerComplaint
+FROM Reviews r
 JOIN OrderDetails od ON r.order_id = od.order_id
-JOIN Product p ON od.product_id = p.product_id
-JOIN Shop s ON p.shop_id = s.shop_id
+JOIN Products p ON od.product_id = p.product_id
+JOIN Shops s ON p.shop_id = s.shop_id
 WHERE r.rating = 1
 ORDER BY s.name ASC;
 
